@@ -1,0 +1,183 @@
+body {
+  font-family: "Overpass",  Arial, Helvetica, sans-serif;
+}
+
+input,textarea{
+  font-family: monospace;
+}
+
+/*#address{
+  width: 100%;
+  height: 150px;
+}
+@media (max-width: 978px) {
+    .container {
+      padding:0;
+      margin:0;
+    }
+
+    body {
+      padding:0;
+    }
+
+    .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom:0;
+    }
+}*/
+
+input[type="checkbox"]{
+  width: 30px; /*Desired width*/
+  height: 30px; /*Desired height*/
+}
+/* table */
+#menu {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 5px;
+}
+
+#menu td, #menu th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#menu tr:nth-child(even){background-color: #f2f2f2;}
+
+#menu tr:hover {background-color: #ddd;}
+
+#menu th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: grey;
+    color: white;
+}
+/* !! table*/
+
+/* filter table **/
+
+
+#myInput {
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+}
+
+.myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+.myTable th, .myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+.myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+/* // filter table */
+
+
+/* add glyphicon in input box */
+
+/* enable absolute positioning */
+.inner-addon {
+    position: relative;
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+/* //add glyphicon in input box */
+
+.invoice-box{
+    margin:auto;
+    padding:30px;
+    border:1px solid #eee;
+    box-shadow:0 0 10px rgba(0, 0, 0, .15);
+    font-size:16px;
+    line-height:24px;
+    color:#555;
+}
+
+.invoice-box p{
+  margin-left: 20%:
+}
+
+.title1{
+  font-weight: 900;
+}
+.title2{
+  font-weight: 700;
+  margin-right: 20px;
+  text-align: left;
+}
+
+.invoice-box table{
+    width:100%;
+    line-height:inherit;
+    text-align:left;
+}
+
+.invoice-box table tr td:nth-child(2){
+    text-align:left;
+}
+
+.invoice-box table tr.top table td.title{
+    font-size:45px;
+    line-height:45px;
+    color:#333;
+}
+
+.invoice-box table tr td table tr.information{
+    background: #eee;
+}
+
+
+
+.invoice-box table tr.total td:nth-child(2){
+    border-top:2px solid #eee;
+    font-weight:bold;
+}
+
+@media only screen and (max-width: 600px) {
+    .invoice-box{
+      margin: 0px;
+      width: 100%;
+    }
+}
+
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #section-to-print, #section-to-print * {
+    visibility: visible;
+  }
+  #section-to-print {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 15% 5% 10% 5%;
+    padding: 5% 5% 0% 0%;
+  }
+}

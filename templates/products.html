@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block head %}
+    <title>Products | Gilool Stock </title>
+{% endblock %}
+{% block content %}
+<div id='menu'>
+<table class="myTable">
+  <tr>
+    <th style="width:45%;">Name</th>
+    <th style="width:45%;">Price</th>
+    <th style="width:10%;">Add</th>
+  </tr>
+    <tr>
+      <form action="{{ url_for('add_product') }}" method="POST">
+        <td><input type="text" class="form-control" id="name" placeholder="Enter name" name="name"></td>
+        <td><input type="text" class="form-control" id="price" placeholder="Enter price" name="price"></td>
+        <td><button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-plus"></i></button></td>
+      </form>
+    </tr>
+</table>
+</div>
+<hr>
+<br>
+
+  <div class="inner-addon left-addon">
+    <i class="glyphicon glyphicon-search"></i>
+    <input type="text" id="search_field"  placeholder="Search for menu items" class="form-control">
+  </div>
+
+  <div id='menu'>
+    <table id="myTable" class="table table-inverse">
+    <tr class="myHead">
+      <th style="width:15%">Name</th>
+      <th style="width:10%;">Price</th>
+      <th style="width:10%">Quntity</th>
+      <th style="width:10%">Total</th>
+      <th style="width:15%;">Order</th>
+      <th style="width:15%">Purchase</th>
+      <th style="width:15%;">Sale</th>
+      <th style="width:10%;">Remove</th>
+    </tr>
+      {% for product in products %}
+      <tr>
+        <td>{{ product.name }} </td>
+        <td>{{ product.price }} </td>
+        <td>{{ product.quntity }} </td>
+        <td>{{ product.total }}</td>
+      <form action="{{ url_for('orders', product_id = product.key.id()) }}" method="POST">
+        <td><input type="text" class="form-control" id="order" placeholder="Enter order" name="order"></td>
+        <td><button type="submit" class="btn btn-default" name='submit' value="purchase"><i class="glyphicon glyphicon-plus"></i></button></td>
+        <td><button type="submit" class="btn btn-default" name="submit" value="sale"><i class="glyphicon glyphicon-minus"></i></button></td>
+      </form>
+        <td>
+          <form action="{{ url_for('remove_product', product_id = product.key.id()) }}" method="POST">
+            <button type="submit" class="btn btn-default"> <span class="glyphicon glyphicon-remove"></span></button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+  </table>
+  </div>
+{% endblock %}
